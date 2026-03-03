@@ -1,8 +1,5 @@
-export default async function handler(request: Request) {
-  const response = await fetch('https://api.vercel.app/products');
-  const products = await response.json();
-  
-  return new Response(JSON.stringify(products), {
+export async function GET(request: Request) {
+  return new Response(JSON.stringify({ message: "Hello from Vercel!" }), {
     status: 200,
     headers: { 'Content-Type': 'application/json' }
   });

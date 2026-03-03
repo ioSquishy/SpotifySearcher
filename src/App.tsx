@@ -14,10 +14,17 @@ function App() {
 
   useEffect(() => {
     // runs whenever songQuery is updated
+    if (!songQuery) return;
+
+    console.log("Fetching for:", songQuery);
+
     fetch("/api/search")
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Data in console:", data);
+      })
+      .catch((error) => {
+        console.error("Fetch error:", error);
       });
   }, [songQuery])
 
