@@ -33,6 +33,10 @@ form input {
   margin-bottom: 10px;
 }
 
+form input, form button {
+  font-size: large;
+}
+
 form button {
   min-height: 30px;
 }
@@ -52,4 +56,9 @@ form input[type="search"] {
 form button[type="submit"] {
   background-color: rgb(185, 255, 199);
   border-radius: 25px;
+}
+
+button:hover {
+  filter: brightness(95%);
+  cursor: pointer;
 }
