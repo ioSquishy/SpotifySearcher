@@ -14,7 +14,11 @@ function App() {
 
   useEffect(() => {
     // runs whenever songQuery is updated
-    console.log(songQuery);
+    fetch("/api/search")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      });
   }, [songQuery])
 
   return (
