@@ -1,5 +1,5 @@
-import { getSpotifyBearerToken } from "../lib/spotify";
-import { createMissingParamResponse } from "../lib/commonApiErrors";
+import { getSpotifyBearerToken } from "../lib/spotify.js";
+import { createMissingParamResponse } from "../lib/commonApiErrors.js";
 
 /**
  * Search for an item using https://developer.spotify.com/documentation/web-api/reference/search
