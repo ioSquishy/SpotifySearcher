@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import './App.css'
 
+const queryLimit = 10;
+
 function App() {
   const [songQuery, setSongQuery] = useState("");
   const songSearchRef = useRef<HTMLInputElement>(null);
@@ -18,7 +20,7 @@ function App() {
 
     console.log("Fetching for:", songQuery);
 
-    fetch("/api/search")
+    fetch(`/api/search?q=${encodeURIComponent(songQuery)}&type=track&limit=${queryLimit}`)
       .then((response) => response.json())
       .then((data) => {
         console.log("Data in console:", data);
